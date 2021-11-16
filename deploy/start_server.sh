@@ -5,4 +5,4 @@
  # @Date: 2021/11/17
 ### 
 
-gunicorn -w 4 app:create_app --bind=127.0.0.1:5000 --daemon
+pipenv run gunicorn -w 4 app:create_app --bind=127.0.0.1:5000 --daemon
