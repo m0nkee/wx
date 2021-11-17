@@ -11,7 +11,7 @@ from api.schema.welcome import WelcomeSchema
 wx_api = Blueprint('wx', __name__)
 
 
-@wx_api.route('')
+@wx_api.route('/echo')
 @swag_from({
     'responses': {
         HTTPStatus.OK.value: {
@@ -20,10 +20,10 @@ wx_api = Blueprint('wx', __name__)
         }
     }
 })
-def wx():
+def wx_echo():
     """
-    1 liner about the route
-    A more detailed description of the endpoint
+    微信echo回复接口
+    返回echostr字符串传参
     ---
     """
     echostr = request.args.get('echostr', default='', type=str)
